@@ -1,7 +1,7 @@
 import {Router} from 'express'
 import {body} from 'express-validator' //body permite validar el req.body
 import User from './models/User'
-import { createAccount, getUser, login, updateProfile } from './handlers'
+import { createAccount, getUser, login, updateProfile, uploadImage } from './handlers'
 import { handleInputErrors } from './middleware/validation'
 import { authenticate } from './middleware/auth'
 
@@ -32,7 +32,8 @@ router.patch('/user',
     body('description').notEmpty().withMessage('la descripción no puede ir vacía'),
     handleInputErrors,
     authenticate,
-    updateProfile
-)
+    updateProfile)
+
+router.post('/user/image',authenticate,uploadImage)
 
 export default router

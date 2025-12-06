@@ -3,8 +3,11 @@ import {validationResult} from 'express-validator'
 import User from "../models/User"
 import { checkPassword, hashPassword } from '../utils/auth'
 import slug from 'slug'
+import formidable from 'formidable'
+import { v4 as uuid } from 'uuid'
 import jwt from 'jsonwebtoken'
 import { generateJWT } from '../utils/jwt'
+import cloudinary from '../config/cloudinary'
 
 export const createAccount = async(req: Request, res: Response)=>{
 
@@ -76,7 +79,7 @@ export const getUser = async(req: Request, res: Response) => {
 export const updateProfile = async(req: Request, res: Response) => {
     try {
         console.log(req.body)
-        const {description} = req.body
+        const {description, links} = req.body
         const handle = slug(req.body.handle,'')
         const handleExists = await User.findOne({handle})
         if(handleExists && handleExists.email !== req.user.email){
@@ -85,10 +88,40 @@ export const updateProfile = async(req: Request, res: Response) => {
         }
         req.user.description = description
         req.user.handle = handle
+        req.user.links = links
         await req.user.save()
 
     } catch (e) {
         const error = new Error('Hubo un error')
         return res.status(404).json({error: error.message})
+    }
+}
+
+export const uploadImage = async(req: Request, res: Response)=> {
+
+    const form = formidable({multiples:false})//porque solo  subiremos una imagen
+    form.parse(req,(error,fields,files)=>{
+        //console.log() //para que no tenga que acceder al objeto
+        cloudinary.uploader.upload(files.file[0].filepath,{public_id: uuid()},async function(error,result){
+            //va a ser async porque va a interactuar con la api o cloudinary
+            //console.log(error)
+            //console.log(result)
+            if(error){
+                const error = new Error("Hubo un error al subir la imagen")
+                return res.status(500).json({error:error.message})
+            }
+            if(result){
+                req.user.image = result.secure_url
+                await req.user.save()
+                res.json({image:result.secure_url})
+            }
+        })
+    })//leyendo datos
+    
+    try{
+        console.log('Desde uploadImage')
+    }catch(e){
+        const error = new Error("Hubo un error")
+        return res.status(500).json({error:error.message})
     }
 }

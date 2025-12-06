@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import {useForm} from 'react-hook-form';
 import {isAxiosError} from 'axios'
 import {toast} from 'sonner'
+import { useTranslation } from 'react-i18next'
 import type {RegisterForm} from '../types';
 import ErrorMessage from '../components/ErrorMessage';
 import api from '../config/axios'
 
 export default function RegisterView(){
+    const { t } = useTranslation()
 
     const initialValues: RegisterForm = {
         name: '',
@@ -39,22 +41,22 @@ export default function RegisterView(){
 
     return(
         <>
-            <h1 className="text-center text-4xl text-white font-bold">Crear cuenta</h1>
+            <h1 className="text-center text-4xl text-white font-bold">{t('auth.register.title')}</h1>
 
             <form 
                 onSubmit={handleSubmit(handleRegister)}
                 className="bg-white px-5 py-20 rounded-lg space-y-10 mt-10 max-w-md mx-auto"
             >
                 <div className="grid grid-cols-1 space-y-3">
-                    <label htmlFor="name" className="text-2xl text-slate-500">Nombre</label>
+                    <label htmlFor="name" className="text-2xl text-slate-500">{t('auth.register.name')}</label>
                     <input
                         id="name"
                         type="text"
-                        placeholder="Tu Nombre"
+                        placeholder={t('auth.register.name')}
                         className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
 
                         {...register('name', {
-                            required: "El nombre es obligatorio."
+                            required: t('auth.register.errors.nameRequired')
                         })}
                     />
                     {errors.name && (
@@ -64,18 +66,18 @@ export default function RegisterView(){
                     )}
                 </div>
                 <div className="grid grid-cols-1 space-y-3">
-                    <label htmlFor="email" className="text-2xl text-slate-500">E-mail</label>
+                    <label htmlFor="email" className="text-2xl text-slate-500">{t('auth.register.email')}</label>
                     <input
                         id="email"
                         type="email"
-                        placeholder="Email de Registro"
+                        placeholder={t('auth.register.email')}
                         className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
 
                         {...register('email', {
-                            required: "El email es obligatorio.",
+                            required: t('auth.register.errors.emailRequired'),
                             pattern: {
                                 value: /\S+@\S+\.\S+/,
-                                message: "Email no válido."
+                                message: t('auth.register.errors.emailInvalid')
                             },
                         })}
                     />
@@ -86,15 +88,15 @@ export default function RegisterView(){
                     )}
                 </div>
                 <div className="grid grid-cols-1 space-y-3">
-                    <label htmlFor="handle" className="text-2xl text-slate-500">Handle</label>
+                    <label htmlFor="handle" className="text-2xl text-slate-500">{t('auth.register.handle')}</label>
                     <input
                         id="handle"
                         type="text"
-                        placeholder="Nombre de usuario: sin espacios"
+                        placeholder={t('auth.register.handle')}
                         className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
 
                         {...register('handle', {
-                            required: "El handle es obligatorio."
+                            required: t('auth.register.errors.handleRequired')
                         })}
                     />
                     {errors.handle && (
@@ -104,18 +106,18 @@ export default function RegisterView(){
                     )}
                 </div>
                 <div className="grid grid-cols-1 space-y-3">
-                    <label htmlFor="password" className="text-2xl text-slate-500">Password</label>
+                    <label htmlFor="password" className="text-2xl text-slate-500">{t('auth.register.password')}</label>
                     <input
                         id="password"
                         type="password"
-                        placeholder="Password de Registro"
+                        placeholder={t('auth.register.password')}
                         className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
 
                         {...register('password', {
-                            required: "El password es obligatorio.",
+                            required: t('auth.register.errors.passwordRequired'),
                             minLength: {
                                 value: 8,
-                                message: "El password debe ser mínimo de 8 caracteres."
+                                message: t('auth.register.errors.passwordShort')
                             }
                         })}
                     />
@@ -127,16 +129,16 @@ export default function RegisterView(){
                 </div>
 
                 <div className="grid grid-cols-1 space-y-3">
-                    <label htmlFor="password_confirmation" className="text-2xl text-slate-500">Repetir Password</label>
+                    <label htmlFor="password_confirmation" className="text-2xl text-slate-500">{t('auth.register.passwordConfirm')}</label>
                     <input
                         id="password_confirmation"
                         type="password"
-                        placeholder="Repetir Password"
+                        placeholder={t('auth.register.passwordConfirm')}
                         className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
 
                         {...register('password_confirmation', {
-                            required: "Repetir el password es obligatorio.",
-                            validate: (value) => value == password || 'Los password no son iguales'
+                            required: t('auth.register.errors.passwordConfirmRequired'),
+                            validate: (value) => value == password || t('auth.register.errors.passwordMismatch')
                         })}
                     />
                     {errors.password_confirmation && (
@@ -149,13 +151,13 @@ export default function RegisterView(){
                 <input
                     type="submit"
                     className="bg-cyan-400 p-3 text-lg w-full uppercase text-slate-600 rounded-lg font-bold cursor-pointer"
-                    value='Crear Cuenta'
-                />  
+                    value={t('auth.register.submit')}
+                />
             </form>
 
             <nav className="mt-10">
                 <Link className="text-center text-white text-lg block" to="/auth/login">
-                    ¿Ya tienes una cuenta? Inicia sesión.
+                    {t('auth.register.hasAccount')} {t('auth.register.loginHere')}
                 </Link>
             </nav>
         </>

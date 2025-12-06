@@ -1,0 +1,77 @@
+{
+  "common": {
+    "save": "Save Changes",
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "email": "E-mail",
+      "password": "Password",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create one here",
+      "errors": {
+        "emailRequired": "E-mail is required",
+        "emailInvalid": "Invalid e-mail",
+        "passwordRequired": "Password is required"
+      }
+    },
+    "register": {
+      "title": "Create Account",
+      "handle": "Handle or Username",
+      "name": "Name",
+      "email": "E-mail",
+      "password": "Password",
+      "passwordConfirm": "Repeat Password",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "loginHere": "Sign in here",
+      "errors": {
+        "handleRequired": "Handle is required",
+        "nameRequired": "Username is required",
+        "emailRequired": "E-mail is required",
+        "emailInvalid": "Invalid e-mail",
+        "passwordRequired": "Password is required",
+        "passwordShort": "Password is too short, minimum 8 characters",
+        "passwordConfirmRequired": "Repeating password is required",
+        "passwordMismatch": "Passwords do not match"
+      }
+    },
+    "logout": "Sign Out"
+  },
+  "navigation": {
+    "links": "Links",
+    "profile": "My Profile"
+  },
+  "links": {
+    "title": "Links Management",
+    "placeholder": "Your social media URL",
+    "invalidUrl": "Invalid URL",
+    "updated": "Successfully Updated"
+  },
+  "profile": {
+    "title": "Edit Profile",
+    "handle": "Handle",
+    "description": "Description",
+    "image": "Profile Image",
+    "changeImage": "Change Image",
+    "preview": "Preview",
+    "noLinks": "No links yet",
+    "errors": {
+      "handleRequired": "Handle is required",
+      "descriptionRequired": "Description cannot be empty"
+    }
+  },
+  "social": {
+    "facebook": "Facebook",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "x": "X (Twitter)",
+    "youtube": "YouTube",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "linkedin": "LinkedIn"
+  }
+}

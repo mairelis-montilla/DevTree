@@ -4,6 +4,7 @@ import Router from './router'
 import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import './i18n/config' // Inicializamos i18n
 
 const queryClient = new QueryClient()
 

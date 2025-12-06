@@ -1,0 +1,77 @@
+{
+  "common": {
+    "save": "Guardar Cambios",
+    "loading": "Cargando...",
+    "error": "Error"
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar Sesión",
+      "email": "E-mail",
+      "password": "Password",
+      "submit": "Iniciar Sesión",
+      "noAccount": "¿No tienes cuenta?",
+      "createAccount": "Crea una aquí",
+      "errors": {
+        "emailRequired": "El e-mail es obligatorio",
+        "emailInvalid": "E-mail no válido",
+        "passwordRequired": "El password es obligatorio"
+      }
+    },
+    "register": {
+      "title": "Crear Cuenta",
+      "handle": "Handle o Nombre de Usuario",
+      "name": "Nombre",
+      "email": "E-mail",
+      "password": "Password",
+      "passwordConfirm": "Repetir Password",
+      "submit": "Crear Cuenta",
+      "hasAccount": "¿Ya tienes cuenta?",
+      "loginHere": "Inicia sesión aquí",
+      "errors": {
+        "handleRequired": "El handle es obligatorio",
+        "nameRequired": "El nombre de usuario es obligatorio",
+        "emailRequired": "El e-mail es obligatorio",
+        "emailInvalid": "E-mail no válido",
+        "passwordRequired": "El password es obligatorio",
+        "passwordShort": "El password es muy corto, mínimo 8 caracteres",
+        "passwordConfirmRequired": "Repetir el password es obligatorio",
+        "passwordMismatch": "Los passwords no son iguales"
+      }
+    },
+    "logout": "Cerrar Sesión"
+  },
+  "navigation": {
+    "links": "Links",
+    "profile": "Mi Perfil"
+  },
+  "links": {
+    "title": "Gestión de Enlaces",
+    "placeholder": "URL de tu red social",
+    "invalidUrl": "URL no válida",
+    "updated": "Actualizado Correctamente"
+  },
+  "profile": {
+    "title": "Editar Perfil",
+    "handle": "Handle",
+    "description": "Descripción",
+    "image": "Imagen de Perfil",
+    "changeImage": "Cambiar Imagen",
+    "preview": "Vista Previa",
+    "noLinks": "No hay enlaces aún",
+    "errors": {
+      "handleRequired": "El handle es obligatorio",
+      "descriptionRequired": "La descripción no puede ir vacía"
+    }
+  },
+  "social": {
+    "facebook": "Facebook",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "x": "X (Twitter)",
+    "youtube": "YouTube",
+    "tiktok": "TikTok",
+    "twitch": "Twitch",
+    "linkedin": "LinkedIn"
+  }
+}

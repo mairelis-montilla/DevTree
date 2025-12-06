@@ -1,18 +1,20 @@
 import { BookmarkSquareIcon, UserIcon } from '@heroicons/react/20/solid'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-
-const tabs = [
-    { name: 'Links', href: '/admin', icon: BookmarkSquareIcon },
-    { name: 'Mi Perfil', href: '/admin/profile', icon: UserIcon },
-]
+import { useTranslation } from 'react-i18next'
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
 export default function NavigationTabs() {
+    const { t } = useTranslation()
     const location = useLocation()
     const navigate = useNavigate()
+
+    const tabs = [
+        { name: t('navigation.links'), href: '/admin', icon: BookmarkSquareIcon },
+        { name: t('navigation.profile'), href: '/admin/profile', icon: UserIcon },
+    ]
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         navigate(e.target.value)
