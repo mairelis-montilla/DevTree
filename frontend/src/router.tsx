@@ -5,8 +5,9 @@ import AuthLayout from "./layouts/AuthLayot";
 import AppLayout from "./layouts/AppLayout";
 import LinkTreeView from "./views/LinkTreeView";
 import ProfileView from "./views/ProfileView";
-import HandleView from "./views/HandleView"; 
+import HandleView from "./views/HandleView";
 import HomeView from "./views/HomeView";
+import NotFoundView from "./views/NotFoundView";
 
 export default function Router(){
     return(
@@ -26,8 +27,11 @@ export default function Router(){
                 </Route>
 
                 {/* RUTA PÚBLICA */}
-                
+
                 <Route path='/:handle' element={<HandleView />} />
+
+                {/* Ruta 404 */}
+                <Route path='*' element={<NotFoundView />} />
 
             </Routes>
         </BrowserRouter>
