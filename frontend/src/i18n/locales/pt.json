@@ -1,0 +1,78 @@
+{
+    "common": {
+        "save": "Salvar Alterações",
+        "loading": "Carregando...",
+        "error": "Erro"
+    },
+    "auth": {
+        "login": {
+            "title": "Entrar",
+            "email": "E-mail",
+            "password": "Senha",
+            "submit": "Entrar",
+            "noAccount": "Não tem uma conta?",
+            "createAccount": "Crie uma aqui",
+            "errors": {
+                "emailRequired": "O e-mail é obrigatório",
+                "emailInvalid": "E-mail inválido",
+                "passwordRequired": "A senha é obrigatória"
+            }
+        },
+        "register": {
+            "title": "Criar Conta",
+            "handle": "Handle ou Nome de Usuário",
+            "name": "Nome",
+            "email": "E-mail",
+            "password": "Senha",
+            "passwordConfirm": "Repetir Senha",
+            "submit": "Criar Conta",
+            "hasAccount": "Já tem uma conta?",
+            "loginHere": "Entre aqui",
+            "errors": {
+                "handleRequired": "O handle é obrigatório",
+                "nameRequired": "O nome de usuário é obrigatório",
+                "emailRequired": "O e-mail é obrigatório",
+                "emailInvalid": "E-mail inválido",
+                "passwordRequired": "A senha é obrigatória",
+                "passwordShort": "A senha é muito curta, mínimo 8 caracteres",
+                "passwordConfirmRequired": "A confirmação de senha é obrigatória",
+                "passwordMismatch": "As senhas não coincidem"
+            }
+        },
+        "logout": "Sair"
+    },
+    "navigation": {
+        "links": "Links",
+        "profile": "Meu Perfil",
+        "visit": "Visitar Meu Perfil"
+    },
+    "links": {
+        "title": "Gerenciamento de Links",
+        "placeholder": "URL da sua rede social",
+        "invalidUrl": "URL inválida",
+        "updated": "Atualizado com sucesso"
+    },
+    "profile": {
+        "title": "Editar Perfil",
+        "handle": "Handle",
+        "description": "Descrição",
+        "image": "Imagem de Perfil",
+        "changeImage": "Alterar Imagem",
+        "preview": "Pré-visualização",
+        "noLinks": "Ainda não há links",
+        "errors": {
+            "handleRequired": "O handle é obrigatório",
+            "descriptionRequired": "A descrição não pode estar vazia"
+        }
+    },
+    "social": {
+        "facebook": "Facebook",
+        "github": "GitHub",
+        "instagram": "Instagram",
+        "x": "X (Twitter)",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "twitch": "Twitch",
+        "linkedin": "LinkedIn"
+    }
+}

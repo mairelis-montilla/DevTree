@@ -43,7 +43,8 @@
   },
   "navigation": {
     "links": "Links",
-    "profile": "Mi Perfil"
+    "profile": "Mi Perfil",
+    "visit": "Visitar Mi Perfil"
   },
   "links": {
     "title": "Gestión de Enlaces",
@@ -73,5 +74,27 @@
     "tiktok": "TikTok",
     "twitch": "Twitch",
     "linkedin": "LinkedIn"
+  },
+  "home": {
+    "title": "DevTree",
+    "loginButton": "Iniciar Sesión",
+    "registerButton": "Crear mi Perfil",
+    "heroTitle": "Todos tus enlaces en un solo lugar",
+    "heroDescription": "Únete a nuestra comunidad de desarrolladores y comparte tus redes, proyectos y portafolio con un solo link.",
+    "discoverTitle": "Descubre a otros Devs",
+    "noDescription": "Sin descripción"
+  },
+  "handle": {
+    "loadingProfile": "Cargando perfil...",
+    "profileImage": "Imagen de perfil",
+    "noLinks": "No hay enlaces públicos disponibles",
+    "developedWith": "Desarrollado con DevTree"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "message": "Lo sentimos, la página que buscas no existe.",
+    "goBack": "Volver atrás",
+    "goHome": "Ir al inicio",
+    "help": "Si crees que esto es un error, contacta con soporte."
   }
 }

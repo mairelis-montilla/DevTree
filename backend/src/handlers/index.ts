@@ -10,26 +10,17 @@ import { generateJWT } from '../utils/jwt'
 import cloudinary from '../config/cloudinary'
 
 export const createAccount = async(req: Request, res: Response)=>{
+    const {email, password} = req.body
 
-    const {email, password, handle} = req.body
-
-    const userExists = await User.findOne({email}) //findOne es como un where en bd relacionales
+    const userExists = await User.findOne({email})
 
     if(userExists){
         const error = new Error('El usuario ya está registrado')
         return res.status(409).json({error: error.message})
     }
 
-    //Otra forma de agregar datos / instanciar el modelo User:
     const user = new User(req.body)
     user.password = await hashPassword(password)
-
-    console.log(slug(handle, ''))
-    
-    //Hash contraseñas:
-    //const hash = await hashPassword(password)
-    //console.log(hash)
-    //
 
     await user.save()
 
@@ -37,7 +28,6 @@ export const createAccount = async(req: Request, res: Response)=>{
 }
 
 export const login = async (req: Request, res: Response) => {
-    //Manejar errores
     let errors = validationResult(req)
     if(!errors.isEmpty()){
         return res.status(400).json({error: errors.array()})
@@ -51,29 +41,26 @@ export const login = async (req: Request, res: Response) => {
         const error = new Error('El usuario no existe')
         return res.status(404).json({error: error.message})
     }
-    
-    //Comprobar el password
-    //console.log(user.password)
-    //checkPassword(password, user.password)
 
     const isPasswordCorrect = await checkPassword(password, user.password)
 
     if(!isPasswordCorrect){
         const error = new Error('Password incorrecto')
         return res.status(401).json({error: error.message})
-        //401: porque no está autorizado a acceder al recurso
     }
-    
-    //res.send('Autenticado...')
 
-    //Hasta aquí tenemos un usuario que ingresó correctamente, entonces:
     const token = generateJWT({id: user._id})
-    res.send(token)
 
+    res.send({ token })
 }
 
 export const getUser = async(req: Request, res: Response) => {
-    res.json(req.user)
+    // Ensure links is always valid JSON
+    const user = req.user.toObject()
+    if (!user.links || user.links.trim() === '') {
+        user.links = '[]'
+    }
+    res.json(user)
 }
 
 export const updateProfile = async(req: Request, res: Response) => {
@@ -98,14 +85,9 @@ export const updateProfile = async(req: Request, res: Response) => {
 }
 
 export const uploadImage = async(req: Request, res: Response)=> {
-
-    const form = formidable({multiples:false})//porque solo  subiremos una imagen
+    const form = formidable({multiples:false})
     form.parse(req,(error,fields,files)=>{
-        //console.log() //para que no tenga que acceder al objeto
         cloudinary.uploader.upload(files.file[0].filepath,{public_id: uuid()},async function(error,result){
-            //va a ser async porque va a interactuar con la api o cloudinary
-            //console.log(error)
-            //console.log(result)
             if(error){
                 const error = new Error("Hubo un error al subir la imagen")
                 return res.status(500).json({error:error.message})
@@ -116,12 +98,42 @@ export const uploadImage = async(req: Request, res: Response)=> {
                 res.json({image:result.secure_url})
             }
         })
-    })//leyendo datos
-    
-    try{
-        console.log('Desde uploadImage')
-    }catch(e){
-        const error = new Error("Hubo un error")
-        return res.status(500).json({error:error.message})
+    })
+}
+
+export const getUserByHandle = async (req: Request, res: Response) => {
+    try {
+        const { handle } = req.params
+
+        const user = await User.findOne({ handle })
+            .select('-_id -password -email -__v')
+
+        if (!user) {
+            const error = new Error('El usuario no existe')
+            return res.status(404).json({ msg: error.message })
+        }
+
+        // Ensure links is always valid JSON
+        const userData = user.toObject()
+        if (!userData.links || userData.links.trim() === '') {
+            userData.links = '[]'
+        }
+
+        res.json(userData)
+    } catch (error) {
+        const e = new Error('Hubo un error')
+        return res.status(500).json({ msg: e.message })
+    }
+}
+
+export const searchByHandle = async (req: Request, res: Response) => {
+    try {
+        const users = await User.find()
+            .select('handle name description image')
+            .limit(20)
+        res.json(users)
+    } catch (error) {
+        const e = new Error('Hubo un error')
+        return res.status(500).json({ msg: e.message })
     }
 }

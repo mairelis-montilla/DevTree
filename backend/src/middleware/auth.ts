@@ -25,21 +25,31 @@ export const authenticate = async(req: Request, res: Response, next: NextFunctio
         return res.status(401).json({error: error.message})
     }
 
-    try{
+    try {
+        // 1. Verificar el token
         const result = jwt.verify(token, process.env.JWT_SECRET)
-        //console.log(result)
+        
+        // 2. Buscar al usuario (ESTO ES LO QUE FALTABA)
         if(typeof result === 'object' && result.id){
             const user = await User.findById(result.id).select('-password')
-            //si no encuentra al usuario
+            
             if(!user){
                 const error = new Error('El usuario no existe')
                 return res.status(404).json({error: error.message})
             }
-            //res.json(user)
+            
             req.user = user
-            next()
+            next() // <--- IMPORTANTE: Dejar pasar a la siguiente función
         }
-    }catch(error){
-        return res.status(500).json({error: error.message})
+        
+    } catch(error) {
+        // --- TRAMPA PARA CAZAR EL ERROR ---
+        console.log("--------------------------------")
+        console.log("EL ERROR ES:", error)
+        console.log("MI SECRETO ES:", process.env.JWT_SECRET)
+        console.log("--------------------------------")
+        // ----------------------------------
+        
+        return res.status(500).json({error: 'Hubo un error en el token'})
     }
 }

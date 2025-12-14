@@ -7,11 +7,16 @@ export interface IUser extends Document {
     password: string
     description: string
     image: string,
-    links: string
+    links: string,
+    visits: number
 }
 
 const userSchema = new Schema({
     //Atributos del usuario
+    visits: {
+        type: Number,
+        default: 0 
+    },
     handle: {
         type: String,
         required: true,

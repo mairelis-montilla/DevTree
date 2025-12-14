@@ -29,12 +29,13 @@ export default function NavigationTabs() {
                 <select
                     id="tabs"
                     name="tabs"
-                    className="block w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
-                    onChange={ handleChange }
+                    className="block w-full rounded-md border-gray-300 dark:border-slate-700 dark:bg-slate-800 dark:text-white focus:border-blue-500 focus:ring-blue-500"
+                    onChange={handleChange}
+                    value={location.pathname}
                 >
                     {tabs.map((tab) => (
                         <option 
-                            value={tab.href}
+                            value={tab.href} 
                             key={tab.name}
                         >{tab.name}</option>
                     ))}
@@ -42,7 +43,8 @@ export default function NavigationTabs() {
             </div>
 
             <div className="hidden sm:block">
-                <div className="border-b border-gray-200">
+                {/* Borde inferior de la navegación: Oscuro en modo noche */}
+                <div className="border-b border-gray-200 dark:border-slate-700">
                     <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                         {tabs.map((tab) => (
                             <Link
@@ -51,14 +53,17 @@ export default function NavigationTabs() {
                                 className={classNames(
                                     location.pathname === tab.href
                                         ? 'border-blue-500 text-blue-500'
-                                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
-                                    'group inline-flex items-center border-b-2 py-4 px-1 text-xl'
+                                        : 'border-transparent text-gray-500 dark:text-slate-400 hover:border-gray-300 dark:hover:border-slate-600 hover:text-gray-700 dark:hover:text-slate-200',
+                                    'group inline-flex items-center border-b-2 py-4 px-1 text-xl transition-colors'
                                 )}
                             >
                                 <tab.icon
                                     className={classNames(
-                                        location.pathname === tab.href ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-500',
-                                        '-ml-0.5 mr-2 h-5 w-5'
+                                        location.pathname === tab.href 
+                                            ? 'text-blue-500' 
+                                            /* Icono Inactivo*/
+                                            : 'text-gray-400 dark:text-slate-500 group-hover:text-gray-500 dark:group-hover:text-slate-300',
+                                        '-ml-0.5 mr-2 h-5 w-5 transition-colors'
                                     )}
                                     aria-hidden="true"
                                 />

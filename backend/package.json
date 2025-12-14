@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "dev:api": "nodemon src/index.ts --api",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "author": "Rodrigo Castilla",
   "license": "ISC",
@@ -20,6 +21,9 @@
     "formidable": "^3.5.4",
     "mongoose": "8.18.3",
     "slug": "11.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "ua-parser-js": "^2.0.6",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
@@ -29,6 +33,9 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/slug": "5.0.9",
     "@types/supertest": "^6.0.3",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "@types/ua-parser-js": "^0.7.39",
     "jest": "^30.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb-memory-server": "^10.3.0",

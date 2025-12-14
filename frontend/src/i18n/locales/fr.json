@@ -1,0 +1,78 @@
+{
+    "common": {
+        "save": "Enregistrer",
+        "loading": "Chargement...",
+        "error": "Erreur"
+    },
+    "auth": {
+        "login": {
+            "title": "Connexion",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "submit": "Se connecter",
+            "noAccount": "Pas de compte ?",
+            "createAccount": "Créer un compte",
+            "errors": {
+                "emailRequired": "L'e-mail est requis",
+                "emailInvalid": "E-mail invalide",
+                "passwordRequired": "Le mot de passe est requis"
+            }
+        },
+        "register": {
+            "title": "Créer un compte",
+            "handle": "Handle ou Nom d'utilisateur",
+            "name": "Nom",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "passwordConfirm": "Confirmer le mot de passe",
+            "submit": "S'inscrire",
+            "hasAccount": "Vous avez déjà un compte ?",
+            "loginHere": "Connectez-vous ici",
+            "errors": {
+                "handleRequired": "Le handle est requis",
+                "nameRequired": "Le nom d'utilisateur est requis",
+                "emailRequired": "L'e-mail est requis",
+                "emailInvalid": "E-mail invalide",
+                "passwordRequired": "Le mot de passe est requis",
+                "passwordShort": "Mot de passe trop court, min 8 caractères",
+                "passwordConfirmRequired": "La confirmation est requise",
+                "passwordMismatch": "Les mots de passe ne correspondent pas"
+            }
+        },
+        "logout": "Déconnexion"
+    },
+    "navigation": {
+        "links": "Liens",
+        "profile": "Mon Profil",
+        "visit": "Visiter Mon Profil"
+    },
+    "links": {
+        "title": "Gestion des Liens",
+        "placeholder": "URL de votre réseau social",
+        "invalidUrl": "URL invalide",
+        "updated": "Mise à jour réussie"
+    },
+    "profile": {
+        "title": "Modifier le Profil",
+        "handle": "Handle",
+        "description": "Description",
+        "image": "Photo de profil",
+        "changeImage": "Changer l'image",
+        "preview": "Aperçu",
+        "noLinks": "Aucun lien pour le moment",
+        "errors": {
+            "handleRequired": "Le handle est requis",
+            "descriptionRequired": "La description ne peut pas être vide"
+        }
+    },
+    "social": {
+        "facebook": "Facebook",
+        "github": "GitHub",
+        "instagram": "Instagram",
+        "x": "X (Twitter)",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "twitch": "Twitch",
+        "linkedin": "LinkedIn"
+    }
+}

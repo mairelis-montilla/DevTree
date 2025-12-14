@@ -1,22 +1,22 @@
-//const express = require('express') CommonJS
-import express from 'express' //Modules
+import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
 import router from './router'
+import analyticsRouter from './router/analytics'
 import {connectDB} from './config/db'
 import { corsConfig } from './config/cors'
+import swaggerUi from 'swagger-ui-express'
+import { swaggerSpec } from './config/swagger'
 
-//instancia del servidor
 const app = express()
 
 connectDB()
 
-//Leer datos del formulario
-app.use(express.json()) //queremos habilitar la lectura de datos con el express.json
-
-//Cors: Middleware global
+app.use(express.json())
 app.use(cors(corsConfig))
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+app.use('/', router)
+app.use('/api/analytics', analyticsRouter)
 
-app.use('/', router) //cada que hay una petición a la URL principal se ejecuta a router
 
 export default app

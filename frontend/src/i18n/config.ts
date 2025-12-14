@@ -5,6 +5,8 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 // Importar traducciones
 import enTranslations from './locales/en.json'
 import esTranslations from './locales/es.json'
+import ptTranslations from './locales/pt.json';
+import frTranslations from './locales/fr.json';
 
 i18n
     // Detecta idioma del navegador
@@ -19,6 +21,12 @@ i18n
             },
             es: {
                 translation: esTranslations
+            },
+            pt: {
+                translation: ptTranslations 
+                },
+            fr: { 
+                translation: frTranslations 
             }
         },
         fallbackLng: 'es', // Idioma por defecto
