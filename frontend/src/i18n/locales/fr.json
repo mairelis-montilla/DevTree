@@ -74,5 +74,37 @@
         "tiktok": "TikTok",
         "twitch": "Twitch",
         "linkedin": "LinkedIn"
+    },
+    "home": {
+        "title": "DevTree",
+        "loginButton": "Se connecter",
+        "registerButton": "Créer mon Profil",
+        "heroTitle": "Tous vos liens en un seul endroit",
+        "heroDescription": "Rejoignez notre communauté de développeurs et partagez vos réseaux, projets et portfolio avec un seul lien.",
+        "discoverTitle": "Découvrez d'autres Devs",
+        "noDescription": "Pas de description"
+    },
+    "handle": {
+        "loadingProfile": "Chargement du profil...",
+        "profileImage": "Photo de profil",
+        "noLinks": "Aucun lien public disponible",
+        "developedWith": "Développé avec DevTree"
+    },
+    "notFound": {
+        "title": "Page non trouvée",
+        "message": "Désolé, la page que vous recherchez n'existe pas.",
+        "goBack": "Retour",
+        "goHome": "Aller à l'accueil",
+        "help": "Si vous pensez qu'il s'agit d'une erreur, contactez le support."
+    },
+    "theme": {
+        "switchToDark": "Passer en mode sombre",
+        "switchToLight": "Passer en mode clair"
+    },
+    "devTreeLink": {
+        "visitMy": "Visitez mon"
+    },
+    "tabs": {
+        "selectTab": "Sélectionner un onglet"
     }
 }

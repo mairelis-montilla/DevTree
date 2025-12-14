@@ -96,15 +96,5 @@
     "goBack": "Go back",
     "goHome": "Go to home",
     "help": "If you think this is an error, contact support."
-  },
-  "theme": {
-    "switchToDark": "Switch to dark mode",
-    "switchToLight": "Switch to light mode"
-  },
-  "devTreeLink": {
-    "visitMy": "Visit my"
-  },
-  "tabs": {
-    "selectTab": "Select a tab"
   }
 }

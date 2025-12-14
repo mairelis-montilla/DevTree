@@ -24,7 +24,7 @@ export default function NavigationTabs() {
         <div className='mb-5'>
             <div className="sm:hidden">
                 <label htmlFor="tabs" className="sr-only">
-                    Select a tab
+                    {t('tabs.selectTab')}
                 </label>
                 <select
                     id="tabs"

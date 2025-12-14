@@ -96,15 +96,5 @@
     "goBack": "Volver atrás",
     "goHome": "Ir al inicio",
     "help": "Si crees que esto es un error, contacta con soporte."
-  },
-  "theme": {
-    "switchToDark": "Cambiar a modo oscuro",
-    "switchToLight": "Cambiar a modo claro"
-  },
-  "devTreeLink": {
-    "visitMy": "Visita mi"
-  },
-  "tabs": {
-    "selectTab": "Selecciona una pestaña"
   }
 }

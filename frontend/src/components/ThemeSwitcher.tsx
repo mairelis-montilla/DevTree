@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
+import { useTranslation } from 'react-i18next'
 
 export default function ThemeSwitcher() {
+    const { t } = useTranslation()
     // Estado inicial: revisamos localStorage o la preferencia del sistema
     const [theme, setTheme] = useState(() => {
         if (localStorage.getItem('theme') === 'dark') {
@@ -32,10 +34,10 @@ export default function ThemeSwitcher() {
         <button
             onClick={toggleTheme}
             className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
-            title={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+            title={theme === 'dark' ? t('theme.switchToLight') : t('theme.switchToDark')}
         >
             {theme === 'dark' ? (
-                <SunIcon className="h-6 w-6 text-yellow-400" /> 
+                <SunIcon className="h-6 w-6 text-yellow-400" />
             ) : (
                 <MoonIcon className="h-6 w-6" />
             )}

@@ -1,12 +1,14 @@
 import type { SocialNetwork } from "../types"
 import { useSortable } from "@dnd-kit/sortable"
 import {CSS} from '@dnd-kit/utilities'
+import { useTranslation } from 'react-i18next'
 
 type DevTreeLinkProps = {
   link: SocialNetwork
 }
 
 export default function DevTreeLink({link}: DevTreeLinkProps){
+  const { t } = useTranslation()
 
   const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id: link.id})
 
@@ -29,7 +31,7 @@ export default function DevTreeLink({link}: DevTreeLinkProps){
       ></div>
       
       <p className="capitalize">
-        Visita mi: {link.id} <span className="font-bold">{link.name}</span>
+        {t('devTreeLink.visitMy')}: <span className="font-bold">{link.name}</span>
       </p>
     </li>
   )

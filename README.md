@@ -25,8 +25,8 @@
 
 ## 🚀 Demo
 
-- **Frontend**: [Ver Demo](#) _(Configura tu URL aquí)_
-- **API Docs**: [Swagger](#) _(Configura tu URL aquí)_
+- **Frontend**: [Ver Demo](https://dev-tree-isil.netlify.app/)
+- **API Docs**: [Swagger](https://devtree-api-os9u.onrender.com/api-docs)
 
 ---
 
@@ -62,27 +62,27 @@
 
 ### 1. Clonar el Repositorio
 
-\`\`\`bash
+```bash
 git clone https://github.com/tu-usuario/devtree.git
 cd devtree
-\`\`\`
+```
 
 ### 2. Configurar Backend
 
-\`\`\`bash
+```bash
 cd backend
 npm install
-\`\`\`
+```
 
 Crea el archivo \`.env\`:
 
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
 Edita \`.env\` con tus credenciales:
 
-\`\`\`env
+```env
 MONGO_URI=mongodb+srv://...
 FRONTEND_URL=http://localhost:5173
 NODE_ENV=development
@@ -90,40 +90,40 @@ JWT_SECRET=tu-secret-aqui
 CLOUDINARY_NAME=tu-cloud-name
 CLOUDINARY_API_KEY=tu-api-key
 CLOUDINARY_API_SECRET=tu-api-secret
-\`\`\`
+```
 
 Inicia el servidor:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 El backend estará en \`http://localhost:4000\`
 
 ### 3. Configurar Frontend
 
-\`\`\`bash
+```bash
 cd frontend
 npm install
-\`\`\`
+```
 
 Crea el archivo \`.env\`:
 
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
 Edita \`.env\`:
 
-\`\`\`env
+```env
 VITE_API_URL=http://localhost:4000
-\`\`\`
+```
 
 Inicia la aplicación:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 El frontend estará en \`http://localhost:5173\`
 
@@ -175,7 +175,7 @@ Sigue la [Guía Rápida de Deployment](./QUICK_DEPLOY.md) para desplegar en prod
 
 ## 📁 Estructura del Proyecto
 
-\`\`\`
+```
 devtree/
 ├── backend/
 │   ├── src/
@@ -208,10 +208,9 @@ devtree/
 │   ├── netlify.toml        # Config para Netlify
 │   └── vercel.json         # Config para Vercel
 │
-├── QUICK_DEPLOY.md
-├── DEPLOYMENT_GUIDE.md
+
 └── README.md
-\`\`\`
+```
 
 ---
 
@@ -219,17 +218,17 @@ devtree/
 
 ### Backend
 
-\`\`\`bash
+```bash
 cd backend
 npm test
-\`\`\`
+```
 
 ### Frontend
 
-\`\`\`bash
+```bash
 cd frontend
 npm test
-\`\`\`
+```
 
 ---
 
