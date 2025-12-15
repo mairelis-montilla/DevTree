@@ -127,28 +127,6 @@ npm run dev
 
 El frontend estará en \`http://localhost:5173\`
 
----
-
-## 🌐 Deployment
-
-Sigue la [Guía Rápida de Deployment](./QUICK_DEPLOY.md) para desplegar en producción (15 minutos).
-
-**Plataformas Recomendadas:**
-- **Backend**: [Render.com](https://render.com) (gratuito)
-- **Frontend**: [Netlify](https://netlify.com) o [Vercel](https://vercel.com) (gratuito)
-- **Database**: [MongoDB Atlas](https://mongodb.com/cloud/atlas) (gratuito)
-- **Images**: [Cloudinary](https://cloudinary.com) (gratuito)
-
----
-
-## 📚 Documentación
-
-- [Guía de Deployment Completa](./DEPLOYMENT_GUIDE.md)
-- [Guía Rápida de Deployment](./QUICK_DEPLOY.md)
-- [Documentación de Swagger](./backend/SWAGGER_README.md)
-- [Arquitectura del Proyecto](./ARCHITECTURE.md)
-
----
 
 ## 🔑 API Endpoints
 
@@ -206,74 +184,11 @@ devtree/
 │   ├── .env.example
 │   ├── package.json
 │   ├── netlify.toml        # Config para Netlify
-│   └── vercel.json         # Config para Vercel
 │
-
 └── README.md
 ```
-
----
-
-## 🧪 Testing
-
-### Backend
-
-```bash
-cd backend
-npm test
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm test
-```
-
----
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas! Por favor:
-
-1. Fork el proyecto
-2. Crea tu feature branch (\`git checkout -b feature/AmazingFeature\`)
-3. Commit tus cambios (\`git commit -m 'Add some AmazingFeature'\`)
-4. Push a la branch (\`git push origin feature/AmazingFeature\`)
-5. Abre un Pull Request
-
----
 
 ## 📝 Licencia
 
 Este proyecto está bajo la Licencia ISC - ver el archivo [LICENSE](LICENSE) para más detalles.
 
----
-
-## 👨‍💻 Autor
-
-**Rodrigo Castilla**
-
----
-
-## 🙏 Agradecimientos
-
-- [LinkTree](https://linktr.ee) - Inspiración
-- [MongoDB](https://mongodb.com) - Base de datos
-- [Cloudinary](https://cloudinary.com) - Almacenamiento de imágenes
-- [Render](https://render.com) - Hosting backend
-- [Netlify](https://netlify.com) - Hosting frontend
-
----
-
-## 📞 Soporte
-
-Si tienes alguna pregunta o problema:
-
-1. Revisa la [Guía de Deployment](./QUICK_DEPLOY.md)
-2. Revisa los [Issues](https://github.com/tu-usuario/devtree/issues)
-3. Crea un nuevo Issue si es necesario
-
----
-
-⭐ Si te gusta este proyecto, dale una estrella en GitHub!
